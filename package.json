@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "pinoccio": "~0.1.2"
+    "pinoccio": "~0.1.2",
+    "querystring": "~0.2.0",
+    "request": "~2.34.0"
   }
 }

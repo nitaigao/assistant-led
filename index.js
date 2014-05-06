@@ -1,9 +1,15 @@
-var http = require('http')
+  var http        = require('http'),
+      request     = require('request'),
+      querystring = require('querystring');
 
 //curl -X POST -v --data '{"email":"andykent","password":"gsrX7LfV4wvNVo"}' https://api.pinocc.io/v1/login
 
 function switchOnLed() {
-  console.log("Switching LED On");
+  var message = "Switching L.E.D. On"
+  console.log(message)
+
+  request.get("http://localhost:4000?say=" + querystring.escape(message))
+
   var pinoccio = require('pinoccio');
   var api = pinoccio('297ad46d9ea55ac3c772c661ef1a9dc7');
 
@@ -15,7 +21,11 @@ function switchOnLed() {
 }
 
 function switchOffLed() {
-  console.log("Switching LED Off");
+  var message = "Switching L.E.D. Off"
+  console.log(message)
+
+  request.get("http://localhost:4000?say=" + querystring.escape(message))
+
   var pinoccio = require('pinoccio');
   var api = pinoccio('297ad46d9ea55ac3c772c661ef1a9dc7');
 
